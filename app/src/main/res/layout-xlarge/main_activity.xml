@@ -8,8 +8,8 @@
 
     <WebView
         android:id="@+id/webview"
-        android:layout_width="899dp"
-        android:layout_height="1280dp"
+        android:layout_width="896dp"
+        android:layout_height="1185dp"
         android:visibility="visible"
         app:layout_constraintBottom_toBottomOf="parent"
         tools:ignore="MissingConstraints"

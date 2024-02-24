@@ -9,7 +9,7 @@
     <WebView
         android:id="@+id/webview"
         android:layout_width="891dp"
-        android:layout_height="417dp"
+        android:layout_height="353dp"
         android:visibility="visible"
         app:layout_constraintBottom_toBottomOf="parent"
         tools:ignore="MissingConstraints"
