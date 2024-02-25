@@ -22,7 +22,7 @@ import java.util.concurrent.atomic.AtomicBoolean
 private const val TAG = "MainActivity"
 
 class MainActivity : AppCompatActivity() {
-    // yes it is about ginger and i am getting him fired from netpox
+
     lateinit var webView: WebView
     private val isMobileAdsInitializeCalled = AtomicBoolean(false)
     private val initialLayoutComplete = AtomicBoolean(false)
