@@ -9,11 +9,14 @@
     <WebView
         android:id="@+id/webview"
         android:layout_width="412dp"
-        android:layout_height="824dp"
+        android:layout_height="834dp"
         android:visibility="visible"
         app:layout_constraintBottom_toBottomOf="parent"
         tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteX="0dp"></WebView>
+        android:windowSoftInputMode="adjustResize"
+        android:fitsSystemWindows="true"
+        tools:layout_editor_absoluteX="0dp">
+    </WebView>
 
     <FrameLayout
         android:id="@+id/ad_view_container"
