@@ -77,6 +77,7 @@ class MainActivity : AppCompatActivity() {
             RequestConfiguration.Builder().setTestDeviceIds(listOf("AAAAAAAAAAAAAA")).build()
         )
         webView = findViewById(R.id.webview)
+        webView.settings.javaScriptEnabled = true
         webView.settings.domStorageEnabled = true
         webView.settings.allowContentAccess = true
         webView.settings.allowFileAccess = true
