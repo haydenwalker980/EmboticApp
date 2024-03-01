@@ -77,13 +77,9 @@ class MainActivity : AppCompatActivity() {
             RequestConfiguration.Builder().setTestDeviceIds(listOf("AAAAAAAAAAAAAA")).build()
         )
         webView = findViewById(R.id.webview)
-        webView.settings.javaScriptEnabled = true
         webView.settings.domStorageEnabled = true
-        webView.settings.saveFormData = true
         webView.settings.allowContentAccess = true
         webView.settings.allowFileAccess = true
-        webView.settings.allowFileAccessFromFileURLs = true
-        webView.settings.allowUniversalAccessFromFileURLs = true
         webView.settings.setSupportZoom(true)
         webView.isClickable = true
 
