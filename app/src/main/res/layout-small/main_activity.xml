@@ -13,6 +13,8 @@
         android:visibility="visible"
         app:layout_constraintBottom_toBottomOf="parent"
         tools:ignore="MissingConstraints"
+        android:fitsSystemWindows="true"
+        android:windowSoftInputMode="adjustResize"
         tools:layout_editor_absoluteX="0dp"></WebView>
 
     <FrameLayout
