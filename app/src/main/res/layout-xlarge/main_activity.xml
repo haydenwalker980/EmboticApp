@@ -8,8 +8,8 @@
 
     <WebView
         android:id="@+id/webview"
-        android:layout_width="903dp"
-        android:layout_height="1230dp"
+        android:layout_width="910dp"
+        android:layout_height="1296dp"
         android:fitsSystemWindows="true"
         android:visibility="visible"
         android:windowSoftInputMode="adjustResize"
