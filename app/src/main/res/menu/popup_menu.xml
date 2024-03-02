@@ -3,4 +3,7 @@
     <item
         android:id="@+id/privacy_settings"
         android:title="@string/privacy_settings"></item>
+<item
+        android:id="@+id/google"
+        android:title="Google"></item>
 </menu>

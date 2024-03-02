@@ -134,6 +134,13 @@ class MainActivity : AppCompatActivity() {
                     }
                     else -> false
                 }
+                when (popupMenuItem.itemId) {
+                    R.id.google -> {
+                        webView.loadUrl("https://www.google.com")
+                        true
+                    }
+                    else -> false
+                }
             }
         }
         return super.onOptionsItemSelected(item)
