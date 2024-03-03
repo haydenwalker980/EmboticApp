@@ -36,7 +36,7 @@
         android:textColor="@color/white"
         android:textSize="20sp"
         app:layout_constraintBottom_toTopOf="@+id/webview"
-        app:layout_constraintEnd_toEndOf="@+id/toolbar"
+
         app:layout_constraintHorizontal_bias="0.048"
         app:layout_constraintStart_toStartOf="parent"
 
