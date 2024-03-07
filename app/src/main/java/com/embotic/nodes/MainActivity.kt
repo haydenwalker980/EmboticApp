@@ -1,5 +1,8 @@
 package com.embotic.nodes
 
+import com.embotic.nodes.OrangeCatActivity
+import android.content.Intent
+import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.webkit.WebResourceRequest
@@ -12,6 +15,7 @@ import android.view.MenuItem
 import android.view.View
 import android.widget.PopupMenu
 import android.widget.Toast
+import androidx.annotation.RequiresApi
 import com.google.android.gms.ads.AdRequest
 import com.google.android.gms.ads.AdSize
 import com.google.android.gms.ads.AdView
@@ -92,7 +96,20 @@ class MainActivity : AppCompatActivity() {
                 return true
             }
         }
-        webView.loadUrl("https://panel.embotic.xyz")
+
+
+        webView.loadUrl("https://panel.embotic.xyz/store/credits")
+    }
+    @RequiresApi(Build.VERSION_CODES.LOLLIPOP)
+    fun shouldOverrideUrlLoading(view: WebView?, request: WebResourceRequest?): Boolean {
+        if (request != null) {
+            if (request.url.toString().contains("https://panel.embotic.xyz/store/credits")) {
+                val intent = Intent(this, OrangeCatActivity::class.java)
+                startActivity(intent)
+                return false
+                }
+            }
+        return true
     }
 
     public override fun onPause() {
