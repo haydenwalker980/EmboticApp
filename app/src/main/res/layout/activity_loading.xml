@@ -18,9 +18,9 @@
         android:layout_below="@id/progressBar"
         android:layout_alignParentStart="true"
         android:layout_alignParentEnd="true"
-        android:layout_marginStart="167dp"
+        android:layout_marginStart="170dp"
         android:layout_marginTop="10dp"
-        android:layout_marginEnd="167dp"
+        android:layout_marginEnd="163dp"
         android:text="Loading..."
         android:textSize="18sp" />
 
