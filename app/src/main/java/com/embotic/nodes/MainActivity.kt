@@ -8,6 +8,7 @@ private const val TAG = "MainActivity"
 
 class MainActivity : AppCompatActivity() {
     lateinit var webView: WebView
+    var appRater: im.delight.apprater.AppRater? = null
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.main_activity)
@@ -18,6 +19,10 @@ class MainActivity : AppCompatActivity() {
         webView.settings.allowFileAccess = true
         webView.settings.setSupportZoom(true)
         webView.isClickable = true
+        appRater = im.delight.apprater.AppRater(this)
+        appRater?.setDaysBeforePrompt(0)
+        appRater?.setLaunchesBeforePrompt(0)
+        appRater?.show()
         webView.webViewClient = object : WebViewClient() {
             override fun shouldOverrideUrlLoading(
                 view: WebView,
