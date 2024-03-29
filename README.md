@@ -2,9 +2,6 @@
  
 This repository contains full source code, issue tracking, contibutions and instructions on how to build the Embotic app.
 
-# Announcement
-The Embotic app is in kind of a weird state right now. It's been delisted from Google Play since Embotic Hosting is moving and I'm waiting on further info, so until then this repository is archived.
-
 # Release download
 
 Prebuilt releases of the app can be found on Google Play:
