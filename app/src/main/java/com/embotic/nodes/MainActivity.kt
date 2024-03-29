@@ -42,7 +42,7 @@ class MainActivity : AppCompatActivity() {
                 return true
             }
         }
-        webView.loadUrl("https://panel.embotic.xyz/")
+        webView.loadUrl("https://dash.embotic.xyz/")
 
     }
 }
