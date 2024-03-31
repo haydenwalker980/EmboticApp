@@ -15,16 +15,6 @@ private const val TAG = "MainActivity"
 class MainActivity : AppCompatActivity() {
     lateinit var webView: WebView
     override fun onCreate(savedInstanceState: Bundle?) {
-        val permissionState =
-            ContextCompat.checkSelfPermission(this, Manifest.permission.POST_NOTIFICATIONS)
-        // If the permission is not granted, request it.
-        if (permissionState == PackageManager.PERMISSION_DENIED) {
-            ActivityCompat.requestPermissions(
-                this,
-                arrayOf(Manifest.permission.POST_NOTIFICATIONS),
-                1
-            )
-        }
         super.onCreate(savedInstanceState)
         setContentView(R.layout.main_activity)
         webView = findViewById(R.id.webView)
