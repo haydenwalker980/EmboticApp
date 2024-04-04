@@ -10,8 +10,8 @@ android {
         applicationId "com.embotic.nodes"
         minSdkVersion 19
         targetSdkVersion 34
-        versionCode 24
-        versionName "2.0b"
+        versionCode 25
+        versionName "2.0c"
         multiDexEnabled true
     }
     compileOptions {
@@ -44,5 +44,6 @@ dependencies {
     implementation 'com.android.support:multidex:1.0.3'
     implementation 'com.google.android.material:material:1.11.0'
     implementation 'androidx.core:core-ktx:+'
+    implementation 'com.google.firebase:firebase-database-ktx:20.3.1'
     kapt 'com.android.databinding:compiler:3.1.4'
 }

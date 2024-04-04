@@ -1,19 +1,21 @@
 package com.embotic.nodes
 
-import android.Manifest
-import android.content.pm.PackageManager
+import android.app.AlertDialog
 import android.os.Bundle
 import android.webkit.WebView
 import android.webkit.WebViewClient
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.app.ActivityCompat
-import androidx.core.content.ContextCompat
+import com.google.firebase.database.FirebaseDatabase
+import com.embotic.nodes.BaseActivity
 
 
 private const val TAG = "MainActivity"
 
-class MainActivity : AppCompatActivity() {
+class MainActivity : BaseActivity() {
     lateinit var webView: WebView
+
+    private val dialog: AlertDialog? = null
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.main_activity)
