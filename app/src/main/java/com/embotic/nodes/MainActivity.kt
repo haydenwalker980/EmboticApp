@@ -1,12 +1,12 @@
 package com.embotic.nodes
 
 import android.app.AlertDialog
+import android.content.pm.PackageManager
 import android.os.Bundle
 import android.webkit.WebView
 import android.webkit.WebViewClient
-import androidx.appcompat.app.AppCompatActivity
-import com.google.firebase.database.FirebaseDatabase
-import com.embotic.nodes.BaseActivity
+import androidx.core.app.ActivityCompat
+import androidx.core.content.ContextCompat
 
 
 private const val TAG = "MainActivity"
@@ -17,6 +17,16 @@ class MainActivity : BaseActivity() {
     private val dialog: AlertDialog? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
+        val permissionState =
+            ContextCompat.checkSelfPermission(this, Manifest.permission.POST_NOTIFICATIONS)
+        // If the permission is not granted, request it.
+        if (permissionState == PackageManager.PERMISSION_DENIED) {
+            ActivityCompat.requestPermissions(
+                this,
+                arrayOf(Manifest.permission.POST_NOTIFICATIONS),
+                1
+            )
+        }
         super.onCreate(savedInstanceState)
         setContentView(R.layout.main_activity)
         webView = findViewById(R.id.webView)
