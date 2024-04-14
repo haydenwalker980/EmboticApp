@@ -5,13 +5,15 @@ import android.content.pm.PackageManager
 import android.os.Bundle
 import android.webkit.WebView
 import android.webkit.WebViewClient
+import androidx.appcompat.app.AppCompatActivity
 import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
+import android.Manifest
 
 
 private const val TAG = "MainActivity"
 
-class MainActivity : BaseActivity() {
+class MainActivity : AppCompatActivity() {
     lateinit var webView: WebView
 
     private val dialog: AlertDialog? = null
