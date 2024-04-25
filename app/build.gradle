@@ -10,8 +10,8 @@ android {
         applicationId "com.embotic.nodes"
         minSdkVersion 19
         targetSdkVersion 34
-        versionCode 28
-        versionName "2.12"
+        versionCode 29
+        versionName "2.13"
         multiDexEnabled true
     }
     compileOptions {
