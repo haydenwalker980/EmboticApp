@@ -76,4 +76,5 @@
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="?attr/actionModeCloseDrawable"
         android:contentDescription="Back" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
