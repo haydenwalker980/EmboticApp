@@ -7,12 +7,13 @@ import android.content.pm.PackageManager
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
+import android.view.MotionEvent
+import android.view.View
 import android.webkit.WebView
 import android.webkit.WebViewClient
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
-import com.google.android.material.floatingactionbutton.FloatingActionButton
 
 
 private const val TAG = "MainActivity"
@@ -33,7 +34,6 @@ class MainActivity : AppCompatActivity() {
                 1
             )
         }
-        // g
         super.onCreate(savedInstanceState)
         setContentView(R.layout.main_activity)
         webView = findViewById(R.id.webView)
@@ -43,6 +43,29 @@ class MainActivity : AppCompatActivity() {
         webView.settings.allowFileAccess = true
         webView.settings.setSupportZoom(true)
         webView.isHorizontalScrollBarEnabled = false
+        webView.setOnTouchListener(object : View.OnTouchListener {
+            var m_downX = 0f
+            override fun onTouch(v: View?, event: MotionEvent): Boolean {
+                if (event.pointerCount > 1) {
+                    //Multi touch detected
+                    return true
+                }
+                when (event.action) {
+                    MotionEvent.ACTION_DOWN -> {
+
+                        // save the x
+                        m_downX = event.x
+                    }
+
+                    MotionEvent.ACTION_MOVE, MotionEvent.ACTION_CANCEL, MotionEvent.ACTION_UP -> {
+
+                        // set x so that it doesn't move
+                        event.setLocation(m_downX, event.y)
+                    }
+                }
+                return false
+            }
+        })
         webView.isClickable = true
         webView.webViewClient = object : WebViewClient() {
             override fun shouldOverrideUrlLoading(
@@ -53,7 +76,6 @@ class MainActivity : AppCompatActivity() {
             }
         }
         webView.loadUrl("https://dash.embotic.xyz/")
-
 
     }
 
@@ -72,5 +94,4 @@ class MainActivity : AppCompatActivity() {
             else -> super.onOptionsItemSelected(item)
         }
     }
-
 }
