@@ -35,7 +35,14 @@ class MainActivity : AppCompatActivity() {
             )
         }
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.main_activity)
+        if (resources.getBoolean(R.bool.isTablet)) {
+            // This is a tablet, so use the tablet layout
+            setContentView(R.layout.main_activity_tablet)
+        } else {
+            // This is not a tablet, use the default layout
+            setContentView(R.layout.main_activity)
+        }
+    
 
         // Check if the device is a tablet and set screen orientation accordingly
         val isTablet = resources.getBoolean(R.bool.isTablet)
