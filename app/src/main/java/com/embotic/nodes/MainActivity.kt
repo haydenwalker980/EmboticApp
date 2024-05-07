@@ -3,6 +3,7 @@ package com.embotic.nodes
 import android.Manifest
 import android.app.AlertDialog
 import android.content.Intent
+import android.content.pm.ActivityInfo
 import android.content.pm.PackageManager
 import android.os.Bundle
 import android.view.Menu
@@ -14,7 +15,6 @@ import android.webkit.WebViewClient
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
-
 
 private const val TAG = "MainActivity"
 
@@ -36,12 +36,19 @@ class MainActivity : AppCompatActivity() {
         }
         super.onCreate(savedInstanceState)
         setContentView(R.layout.main_activity)
+
+        // Check if the device is a tablet and set screen orientation accordingly
+        val isTablet = resources.getBoolean(R.bool.isTablet)
+        if (isTablet) {
+            requestedOrientation = ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE
+        }
+
         webView = findViewById(R.id.webView)
-        webView.setInitialScale(1);
-        webView.getSettings().setLoadWithOverviewMode(true);
-        webView.getSettings().setUseWideViewPort(true);
-        webView.setScrollBarStyle(WebView.SCROLLBARS_OUTSIDE_OVERLAY);
-        webView.setScrollbarFadingEnabled(false);
+        webView.setInitialScale(1)
+        webView.getSettings().setLoadWithOverviewMode(true)
+        webView.getSettings().setUseWideViewPort(true)
+        webView.setScrollBarStyle(WebView.SCROLLBARS_OUTSIDE_OVERLAY)
+        webView.setScrollbarFadingEnabled(false)
         webView.settings.javaScriptEnabled = true
         webView.settings.domStorageEnabled = true
         webView.settings.allowContentAccess = true
@@ -61,7 +68,6 @@ class MainActivity : AppCompatActivity() {
             }
         }
         webView.loadUrl("https://dash.embotic.xyz/")
-
     }
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
