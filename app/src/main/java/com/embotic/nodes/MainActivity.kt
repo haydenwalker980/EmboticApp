@@ -18,6 +18,7 @@ import androidx.core.content.ContextCompat
 
 private const val TAG = "MainActivity"
 
+
 class MainActivity : AppCompatActivity() {
     lateinit var webView: WebView
 
