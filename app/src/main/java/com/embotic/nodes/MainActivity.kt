@@ -47,7 +47,7 @@ class MainActivity : AppCompatActivity() {
         webView.setInitialScale(1)
         webView.getSettings().setLoadWithOverviewMode(true)
         webView.getSettings().setUseWideViewPort(true)
-        webView.setScrollBarStyle(WebView.SCROLLBARS_OUTSIDE_OVERLAY)
+        webView.setScrollBarStyle(WebView.SCROLLBARS_INSIDE_OVERLAY)
         webView.setScrollbarFadingEnabled(false)
         webView.settings.javaScriptEnabled = true
         webView.settings.domStorageEnabled = true
