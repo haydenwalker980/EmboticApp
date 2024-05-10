@@ -194,7 +194,7 @@ class MainActivity : AppCompatActivity() {
     }
     private fun loadBanner() {
         // This is an ad unit ID for a test ad. Replace with your own banner ad unit ID.
-        adView.adUnitId = "ca-app-pub-3940256099942544/9214589741"
+        adView.adUnitId = "ca-app-pub-1451772312405789/1751906615"
         adView.setAdSize(adSize)
 
         // Create an ad request.
