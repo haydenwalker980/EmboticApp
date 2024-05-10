@@ -6,6 +6,7 @@ import android.content.Intent
 import android.content.pm.ActivityInfo
 import android.content.pm.PackageManager
 import android.os.Bundle
+import android.util.Log
 import android.view.Menu
 import android.view.MenuItem
 import android.view.MotionEvent
@@ -15,12 +16,17 @@ import android.webkit.WebViewClient
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
+import com.google.android.play.core.appupdate.AppUpdateManager
+import com.google.android.play.core.appupdate.AppUpdateManagerFactory
+import com.google.android.play.core.install.model.AppUpdateType
+import com.google.android.play.core.install.model.UpdateAvailability
 
 private const val TAG = "MainActivity"
 
 
 class MainActivity : AppCompatActivity() {
     lateinit var webView: WebView
+    private val  appUpdateManager: AppUpdateManager? = AppUpdateManagerFactory.create(this)
 
     private val dialog: AlertDialog? = null
 
@@ -66,6 +72,8 @@ class MainActivity : AppCompatActivity() {
         }
         webView.loadUrl("https://dash.embotic.xyz/")
     }
+
+
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
         menuInflater.inflate(R.menu.main, menu)
