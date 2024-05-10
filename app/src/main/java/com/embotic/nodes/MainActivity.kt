@@ -40,7 +40,6 @@ class MainActivity : AppCompatActivity() {
     private lateinit var binding: MainActivityBinding
     private lateinit var adView: AdView
     private lateinit var googleMobileAdsConsentManager: GoogleMobileAdsConsentManager
-    private val  appUpdateManager: AppUpdateManager? = AppUpdateManagerFactory.create(this)
 
     private val dialog: AlertDialog? = null
     private val adSize: AdSize
