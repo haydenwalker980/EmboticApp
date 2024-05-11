@@ -11,7 +11,7 @@ import com.google.android.ump.ConsentRequestParameters
 import com.google.android.ump.FormError
 import com.google.android.ump.UserMessagingPlatform
 
-class GoogleMobileAdsConsentManager private constructor(context: Context) {
+class GoogleMobileAdsConsentManager private constructor(context: Context) : Activity() {
     private val consentInformation: ConsentInformation =
         UserMessagingPlatform.getConsentInformation(context)
 
