@@ -68,6 +68,7 @@ class MainActivity : AppCompatActivity() {
         } else {
             // This is not a tablet, use the default layout
             setContentView(binding.root)
+            setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
         }
 
         adView = AdView(this)
